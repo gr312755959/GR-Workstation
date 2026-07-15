@@ -1,0 +1,21 @@
+最简单的打开方式：
+
+1. 双击这个文件夹里的【双击打开网站.html】
+2. 正常情况下它会直接打开完整网站，不需要输入任何命令
+
+不要双击根目录里的 index.html。
+那个文件是给开发工具 Vite 使用的，直接双击容易空白。
+
+也不要优先双击 dist 文件夹里的 index.html。
+有些浏览器会因为安全策略拦截它，导致空白。
+
+如果以后你想边改边预览，才需要用命令：
+
+1. 打开 Windows PowerShell
+2. 输入：cd "D:\AI\AI-Codex-program\06-个人网址"
+3. 输入：npm run dev
+4. 浏览器打开：http://localhost:5173
+
+你截图里的报错原因：
+cd /d 是 cmd 里的写法，不是 PowerShell 的写法。
+PowerShell 里要写 cd "文件夹路径"。

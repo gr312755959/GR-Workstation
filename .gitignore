@@ -1,0 +1,15 @@
+node_modules/
+dist/
+verification/
+backups/
+.tools/
+
+# Original media stays on this computer/NAS and is uploaded to Cloudflare R2.
+public/assets/videos/
+
+# Local-only files and credentials.
+.env
+.env.*
+!.env.example
+.wrangler/
+*.log
