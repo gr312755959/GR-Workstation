@@ -2162,9 +2162,85 @@ nav a.is-active::after {
 }
 
 @media (max-width: 760px) {
+  .hero-section {
+    min-height: 700px;
+    padding-top: 88px;
+  }
+
+  .hero-layout {
+    width: min(100% - 32px, 520px);
+    min-height: 0;
+  }
+
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-copy::before {
+    inset: -36px -20px -32px;
+  }
+
+  .hero-pill {
+    min-height: 32px;
+    margin-bottom: 14px;
+    padding: 0 13px;
+    font-size: 11px;
+  }
+
+  .hero-copy h1 {
+    width: 100%;
+    line-height: 1.05;
+  }
+
+  .hero-copy h1 span {
+    font-size: clamp(42px, 13.5vw, 58px);
+  }
+
+  .hero-copy h1 strong {
+    margin-top: 2px;
+    font-size: clamp(39px, 11.8vw, 52px);
+  }
+
+  .hero-lead {
+    margin-top: 16px;
+    font-size: clamp(24px, 7.3vw, 32px);
+    line-height: 1.25;
+  }
+
+  .hero-lead span {
+    white-space: normal;
+  }
+
+  .hero-desc {
+    max-width: 330px;
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+  }
+
+  .hero-actions .button {
+    min-height: 42px;
+    padding: 0 17px;
+    font-size: 13px;
+  }
+
   .hero-preview-dock {
-    bottom: 14px;
-    grid-template-columns: 1fr auto;
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    min-height: 88px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    transform: none;
+    padding: 6px;
   }
 
   .hero-preview-dock > span {
@@ -2173,10 +2249,28 @@ nav a.is-active::after {
 
   .hero-preview-tabs {
     grid-column: 1;
+    width: 100%;
+    min-width: 0;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .hero-preview-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-preview-tabs button {
+    min-height: 40px;
+    padding: 0 11px;
+    white-space: nowrap;
   }
 
   .hero-preview-open {
-    grid-column: 2;
+    width: 100%;
+    grid-column: 1;
+    min-height: 36px;
+    padding: 0 12px;
+    white-space: nowrap;
   }
 
   .video-modal {
