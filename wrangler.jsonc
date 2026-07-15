@@ -2,5 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "guo-rui-portfolio",
   "compatibility_date": "2026-07-15",
-  "pages_build_output_dir": "./dist"
+  "pages_build_output_dir": "./dist",
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "guo-rui-portfolio-media",
+      "preview_bucket_name": "guo-rui-portfolio-media"
+    }
+  ]
 }
