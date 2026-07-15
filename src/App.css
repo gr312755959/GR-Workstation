@@ -2177,6 +2177,16 @@ nav a.is-active::after {
     min-width: 0;
   }
 
+  .hero-pill,
+  .hero-copy h1,
+  .hero-copy h1 span,
+  .hero-copy h1 strong,
+  .hero-lead,
+  .hero-desc,
+  .hero-actions {
+    animation: none;
+  }
+
   .hero-copy::before {
     inset: -36px -20px -32px;
   }
