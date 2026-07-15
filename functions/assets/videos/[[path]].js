@@ -18,6 +18,14 @@ function buildRangeHeaders(object, request) {
   return headers;
 }
 
+function decodePathPart(part) {
+  try {
+    return decodeURIComponent(part);
+  } catch {
+    return part;
+  }
+}
+
 export async function onRequest(context) {
   const { request, env, params } = context;
 
@@ -33,7 +41,7 @@ export async function onRequest(context) {
   }
 
   const pathParts = Array.isArray(params.path) ? params.path : [params.path];
-  const key = `videos/${pathParts.filter(Boolean).join('/')}`;
+  const key = `videos/${pathParts.filter(Boolean).map(decodePathPart).join('/')}`;
   const options = request.headers.has('range') ? { range: request.headers } : undefined;
   const object = request.method === 'HEAD'
     ? await env.MEDIA_BUCKET.head(key)
@@ -47,4 +55,3 @@ export async function onRequest(context) {
   const status = request.headers.has('range') ? 206 : 200;
   return new Response(request.method === 'HEAD' ? null : object.body, { status, headers });
 }
-
